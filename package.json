@@ -1,7 +1,7 @@
 {
   "name": "quran-hifz-tracker",
   "version": "1.0.0",
-  "main": "index.ts",
+  "main": "expo-router/entry",
   "dependencies": {
     "@expo/metro-runtime": "~57.0.3",
     "@expo/vector-icons": "^15.0.2",
@@ -27,7 +27,8 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "export:web": "expo export --platform web --output-dir dist"
   },
   "private": true
 }
