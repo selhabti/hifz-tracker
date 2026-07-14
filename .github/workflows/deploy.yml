@@ -24,6 +24,10 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npx expo export --platform web --output-dir dist
+      - name: Fix absolute paths for GitHub Pages subpath
+        run: |
+          find dist -type f \( -name '*.js' -o -name '*.html' -o -name '*.css' -o -name '*.json' \) \
+            -exec sed -i 's|/_expo/|./_expo/|g' {} +
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
