@@ -28,6 +28,7 @@ jobs:
         run: |
           find dist -type f \( -name '*.js' -o -name '*.html' -o -name '*.css' -o -name '*.json' \) \
             -exec sed -i 's|/_expo/|./_expo/|g' {} +
+          touch dist/.nojekyll
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
